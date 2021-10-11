@@ -9,8 +9,8 @@ layui.use(function() {
         ,jQuery = layui.jquery;
 
 
-    jQuery("#inputAuthor").val('<a href="https://fengwenyi.com">Erwin Feng</a>')
-
+    jQuery("#inputAuthor").val('Diao')
+    jQuery("#ignoreColumns").val('id,create_by,update_by,create_time,update_time,del_flag')
 
     //监听提交
     form.on('submit(formDemo)', function(data){

@@ -1,0 +1,54 @@
+package ${package.Service};
+
+import ${package.Entity}.${entity};
+import ${superServiceClassPackage};
+
+import java.util.List;
+
+/**
+ * $!{table.comment}
+ *
+ * @author ${author}
+ * @since ${date}
+ */
+#if(${kotlin})
+interface ${table.serviceName} : ${superServiceClass}<${entity}>
+#else
+public interface ${table.serviceName} extends ${superServiceClass}<${entity}> {
+
+	/**
+	 * 新增
+	 * @param ${table.entityPath} ${entity}
+	 * @return ${entity}
+	 */
+    ${entity} save${entity}(${entity} ${table.entityPath});
+
+	/**
+     * 详情
+     * @param id String
+     * @return ${entity}
+     */
+    ${entity} get${entity}(String id);
+
+	/**
+	 * 修改
+	 * @param ${table.entityPath} ${entity}
+	 * @return int
+	 */
+	boolean update${entity}(${entity} ${table.entityPath});
+
+	/**
+	 * 删除
+	 * @param ids List<String>
+	 * @return int
+	 */
+	boolean remove${entity}s(List<String> ids);
+
+	/**
+	 * 列表
+	 * @param ${table.entityPath} ${entity}
+	 * @return List<${entity}>
+	 */
+	List<${entity}> getAll${entity}s(${entity} ${table.entityPath});
+}
+#end

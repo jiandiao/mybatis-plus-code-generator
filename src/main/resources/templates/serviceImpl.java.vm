@@ -1,0 +1,50 @@
+package ${package.ServiceImpl};
+
+import ${package.Entity}.${entity};
+import ${package.Mapper}.${table.mapperName};
+import ${package.Service}.${table.serviceName};
+import ${superServiceImplClassPackage};
+
+/**
+ * $!{table.comment}
+ *
+ * @author ${author}
+ * @since ${date}
+ */
+#if(${kotlin})
+open class ${table.serviceImplName} : ${superServiceImplClass}<${table.mapperName}, ${entity}>(), ${table.serviceName} {
+
+}
+#else
+public class ${table.serviceImplName} extends ${superServiceImplClass}<${table.mapperName}, ${entity}> implements ${table.serviceName} {
+
+	@Override
+	public ${entity} save${entity}(${entity} ${table.entityPath}) {
+	    int result = baseMapper.insert(${table.entityPath});
+	    if (result == 0) {
+	        return null;
+	    }
+	    return ${table.entityPath};
+	}
+
+	@Override
+	public ${entity} get${entity}(String id) {
+	    return baseMapper.selectById(id);
+	}
+
+	@Override
+	public boolean update${entity}(${entity} ${table.entityPath}) {
+	    return baseMapper.updateById(${table.entityPath}) != 0;
+	}
+
+	@Override
+	public boolean remove${entity}s(List<String> ids) {
+	    return baseMapper.deleteBatchIds(ids) != 0;
+	}
+
+	@Override
+	public List<${entity}> getAll${entity}s(${entity} ${table.entityPath}) {
+	    return baseMapper.getAll${entity}s(${table.entityPath});
+	}
+}
+#end

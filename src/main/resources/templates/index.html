@@ -55,7 +55,7 @@
                     <label class="layui-form-label"><span class="red-star">*</span>包名</label>
                     <div class="layui-input-block">
                         <input type="text" name="packageName" required lay-verify="required" placeholder="请输入包名"
-                               value="com.example.demo" autocomplete="off" class="layui-input">
+                               value="com.csit.module.data.engine" autocomplete="off" class="layui-input">
                     </div>
                 </div>
 
@@ -63,7 +63,7 @@
                     <label class="layui-form-label">实体父类</label>
                     <div class="layui-input-block">
                         <input type="text" name="superClassName" placeholder="请输入实体父类的全类名" autocomplete="off"
-                               class="layui-input">
+                               value="com.csit.common.web.entity.BaseEntity" class="layui-input">
                     </div>
                 </div>
 
@@ -83,7 +83,7 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label"><span class="red-star">*</span>数据库地址</label>
                     <div class="layui-input-block">
-                        <input type="text" name="host" required lay-verify="required" placeholder="ip:port / url"
+                        <input type="text" name="host" required lay-verify="required" placeholder="ip:port / url" value="localhost:3306"
                                autocomplete="off" class="layui-input">
                     </div>
                 </div>
@@ -91,7 +91,7 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label"><span class="red-star">*</span>数据库名称</label>
                     <div class="layui-input-block">
-                        <input type="text" name="dbName" required lay-verify="required" placeholder="请输入数据库名称"
+                        <input type="text" name="dbName" required lay-verify="required" placeholder="请输入数据库名称" value="csit_data_engine"
                                autocomplete="off" class="layui-input">
                     </div>
                 </div>
@@ -99,7 +99,7 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label"><span class="red-star">*</span>数据库用户名</label>
                     <div class="layui-input-block">
-                        <input type="text" name="username" required lay-verify="required" placeholder="请输入数据库用户名"
+                        <input type="text" name="username" required lay-verify="required" placeholder="请输入数据库用户名" value="root"
                                autocomplete="off" class="layui-input">
                     </div>
                 </div>
@@ -107,7 +107,7 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">数据库密码</label>
                     <div class="layui-input-block">
-                        <input type="text" name="password" placeholder="请输入数据库密码" autocomplete="off"
+                        <input type="text" name="password" placeholder="请输入数据库密码" autocomplete="off" value="mysql,."
                                class="layui-input">
                     </div>
                 </div>
@@ -118,7 +118,7 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">忽略的字段</label>
                     <div class="layui-input-block">
-                        <textarea name="ignoreColumns" placeholder="请输入列名，以英文逗号隔开" class="layui-textarea"></textarea>
+                        <textarea id="ignoreColumns" name="ignoreColumns" placeholder="请输入列名，以英文逗号隔开" class="layui-textarea"></textarea>
                     </div>
                 </div>
 
@@ -175,7 +175,7 @@
                             <div class="layui-form-item">
                                 <label class="layui-form-label">输出目录</label>
                                 <div class="layui-input-block">
-                                    <input type="text" name="outDir" placeholder="输出目录" autocomplete="off"
+                                    <input type="text" name="outDir" placeholder="输出目录" autocomplete="off" value="/Users/diao/Desktop/code-generator/code"
                                            class="layui-input">
                                 </div>
                             </div>
@@ -187,14 +187,14 @@
                             <div class="layui-form-item">
                                 <label class="layui-form-label">实体类</label>
                                 <div class="layui-input-block">
-                                    <input type="text" name="packageEntity" placeholder="请输入实体类包名" value="entity"
+                                    <input type="text" name="packageEntity" placeholder="请输入实体类包名" value="domain"
                                            autocomplete="off" class="layui-input">
                                 </div>
                             </div>
                             <div class="layui-form-item">
                                 <label class="layui-form-label">mapper</label>
                                 <div class="layui-input-block">
-                                    <input type="text" name="packageMapper" placeholder="请输入Mapper包名" value="dao"
+                                    <input type="text" name="packageMapper" placeholder="请输入Mapper包名" value="mapper"
                                            autocomplete="off" class="layui-input">
                                 </div>
                             </div>
@@ -202,7 +202,7 @@
                                 <label class="layui-form-label">mappper xml</label>
                                 <div class="layui-input-block">
                                     <input type="text" name="packageMapperXml" placeholder="请输入Mapper XML文件目录名"
-                                           value="mapper" autocomplete="off" class="layui-input">
+                                           value="mapper.xml" autocomplete="off" class="layui-input">
                                 </div>
                             </div>
 
@@ -210,14 +210,14 @@
                                 <label class="layui-form-label">service</label>
                                 <div class="layui-input-block">
                                     <input type="text" name="packageService" placeholder="请输入service包名"
-                                           value="repository" autocomplete="off" class="layui-input">
+                                           value="service" autocomplete="off" class="layui-input">
                                 </div>
                             </div>
                             <div class="layui-form-item">
                                 <label class="layui-form-label">service.impl</label>
                                 <div class="layui-input-block">
                                     <input type="text" name="packageServiceImpl" placeholder="请输入Service Impl包名"
-                                           value="repository.impl" autocomplete="off" class="layui-input">
+                                           value="service.impl" autocomplete="off" class="layui-input">
                                 </div>
                             </div>
 
@@ -237,14 +237,14 @@
                                 <label class="layui-form-label">实体类</label>
                                 <div class="layui-input-block">
                                     <input type="text" name="fileNamePatternEntity" placeholder="请输入实体类文件名格式"
-                                           value="%sEntity" autocomplete="off" class="layui-input">
+                                           value="%s" autocomplete="off" class="layui-input">
                                 </div>
                             </div>
                             <div class="layui-form-item">
                                 <label class="layui-form-label">mapper</label>
                                 <div class="layui-input-block">
                                     <input type="text" name="fileNamePatternMapper" placeholder="请输入Mapper文件名格式"
-                                           value="I%sDao" autocomplete="off" class="layui-input">
+                                           value="%sMapper" autocomplete="off" class="layui-input">
                                 </div>
                             </div>
                             <div class="layui-form-item">
@@ -259,14 +259,14 @@
                                 <label class="layui-form-label">service</label>
                                 <div class="layui-input-block">
                                     <input type="text" name="fileNamePatternService" placeholder="请输入service文件名格式"
-                                           value="MP%sRepository" autocomplete="off" class="layui-input">
+                                           value="I%sService" autocomplete="off" class="layui-input">
                                 </div>
                             </div>
                             <div class="layui-form-item">
                                 <label class="layui-form-label">service.impl</label>
                                 <div class="layui-input-block">
                                     <input type="text" name="fileNamePatternServiceImpl" placeholder="请输入Service Impl包名"
-                                           value="%sRepositoryImpl" autocomplete="off" class="layui-input">
+                                           value="%sServiceImpl" autocomplete="off" class="layui-input">
                                 </div>
                             </div>
 
@@ -293,7 +293,7 @@
                             <div class="layui-form-item">
                                 <label class="layui-form-label">乐观锁</label>
                                 <div class="layui-input-block">
-                                    <input type="text" name="fieldVersion" placeholder="请输入乐观锁字段名" value="version"
+                                    <input type="text" name="fieldVersion" placeholder="请输入乐观锁字段名" value="version_flag"
                                            autocomplete="off" class="layui-input">
                                 </div>
                             </div>
@@ -307,7 +307,7 @@
                                 <label class="layui-form-label">是否支持Swagger</label>
                                 <div class="layui-input-block">
                                     <input type="checkbox" name="swaggerSupport" lay-skin="switch" lay-text="开启|关闭"
-                                           value="true">
+                                           value="true" checked>
                                 </div>
                             </div>
 
@@ -331,7 +331,7 @@
                                 <label class="layui-form-label">是否开启链式</label>
                                 <div class="layui-input-block">
                                     <input type="checkbox" name="lombokChainModel" lay-skin="switch" lay-text="开启|关闭"
-                                           value="true" checked>
+                                           value="true">
                                 </div>
                             </div>
 
