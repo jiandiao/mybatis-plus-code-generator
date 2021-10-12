@@ -122,11 +122,11 @@ public class MyAutoGenerator {
     }
 
     public void templateConfigBuilder(TemplateConfig.Builder builder) {
-        builder.controller("/templates/controller.java");
-        builder.entity("/templates/entity.java");
-        builder.mapper("/templates/mapper.java");
-        builder.mapperXml("/templates/mapper.xml");
-        builder.service("/templates/service.java");
-        builder.serviceImpl("/templates/serviceImpl.java");
+        builder.controller("/templates/csit/controller.java");
+        //builder.entity("/templates/custom/entity.java");
+        //builder.mapper("/templates/custom/mapper.java");
+        //builder.mapperXml("/templates/custom/mapper.xml");
+        //builder.service("/templates/custom/service.java");
+        //builder.serviceImpl("/templates/custom/serviceImpl.java");
     }
 }

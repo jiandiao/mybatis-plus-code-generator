@@ -8,9 +8,8 @@ layui.use(function() {
         ,util = layui.util
         ,jQuery = layui.jquery;
 
-
     jQuery("#inputAuthor").val('Diao')
-    jQuery("#ignoreColumns").val('id,create_by,update_by,create_time,update_time,del_flag')
+    jQuery("#ignoreColumns").val('ID,CREATE_BY,UPDATE_BY,CREATE_TIME,UPDATE_TIME,DEL_FLAG')
 
     //监听提交
     form.on('submit(formDemo)', function(data){
