@@ -7,6 +7,7 @@ import ${package.Service}.${table.serviceName};
 import ${package.Entity}.${entity};
 
 import org.springframework.web.bind.annotation.*;
+import org.springframework.validation.annotation.Validated;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -44,7 +45,7 @@ public class ${table.controllerName} {
 
     @ApiOperation(value = "新增")
     @PostMapping("/save")
-    public Boolean save(@RequestBody ${entity} been) {
+    public Boolean save(@RequestBody @Validated ${entity} been) {
 	    return ${table.entityPath}Service.save(been);
 	}
 
@@ -56,7 +57,7 @@ public class ${table.controllerName} {
 
     @ApiOperation(value = "修改")
     @PostMapping("/update")
-    public Boolean update(@RequestBody ${entity} bean) {
+    public Boolean update(@RequestBody @Validated ${entity} bean) {
 	    return ${table.entityPath}Service.updateById(bean);
 	}
 
