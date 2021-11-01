@@ -55,7 +55,7 @@ public class ${table.controllerName} {
 	}
 
     @ApiOperation(value = "修改")
-    @PostMapping("/update/{id}")
+    @PostMapping("/update")
     public Boolean update(@RequestBody ${entity} bean) {
 	    return ${table.entityPath}Service.updateById(bean);
 	}
